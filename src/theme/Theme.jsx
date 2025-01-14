@@ -2,8 +2,8 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
     fonts: {
-        fontInterTight: ["Inter Tight", "serif"],
-        fontInter: ["Inter", "serif"]
+        fontInterTight: '"Inter Tight", serif',
+        fontInter: '"Inter", serif'
     },
     colorContent: {
         colorContentPrimary: "#FFFFFF",
@@ -13,7 +13,7 @@ const theme = {
     },
     colorBackground: {
         colorBackgroundPrimary: "#151515",
-        colorBackgroundSecondary: "#1E1E1E",
+        colorBackgroundSecondary: "#1e1e1e",
         colorBackgroundTertiary: "#23242C",
         colorBackgroundBrand: "#9282FA",
         colorBackgroundHighlights: "#BDB4FA"
