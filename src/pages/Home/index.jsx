@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Theme from "../../theme/Theme";
 import Header from "../../components/Header";
+import TagLogo from "../../components/TagLogo";
+import ButtonDefault from "../../components/ButtonDefault";
+import { useNavigate } from "react-router-dom";
 
 const DivContainer = styled.div `
     position: relative;
@@ -27,28 +30,45 @@ const DivContainer = styled.div `
 `;
 
 const DivCardHome = styled.div `
+    position: relative;
     width: 700px;
     height: 70vh;
     padding: 1.25rem;
-    background: ${props => props.theme.colorBackground.colorBackgroundSecondary};
+    background: #14151D;
     border-radius: 0.625rem;
+    overflow: hidden;
+`;
+
+const DivContentHome = styled.div `
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
 `;
 
 function Home() {
+    const navigate = useNavigate();
+    
     return (
         <Theme>
             <DivContainer>
                 <DivCardHome>
-                    <span>Mundo Barbeiro</span>
+                    <TagLogo />
 
-                    <Header 
-                        title="Bem-vindo ao Mundo Barbeiro!"
-                        subtitle="Estamos muito felizes em ter você conosco! Aqui, você pode agendar seu horário de forma rápida e prática para garantir que seu corte ou barba fiquem sempre impecáveis."
-                    />
-                    
-                    <p>Fique à vontade para agendar e aproveitar uma experiência única. Estamos prontos para atendê-lo!</p>
-                    
-                    <button type="button">ACESSAR</button>
+                    <DivContentHome>
+                        <Header 
+                            title="Bem-vindo ao Mundo Barbeiro!"
+                            subtitle="Estamos muito felizes em ter você conosco! Aqui, você pode agendar seu horário de forma rápida e prática para garantir que seu corte ou barba fiquem sempre impecáveis."
+                        />
+                                            
+                        <ButtonDefault 
+                            title="REALIZAR AGENDAMENTOS"
+                            enableShadow={true}
+                            onHandleClick={() => navigate('/appointments')} 
+                        />
+                    </DivContentHome>
                 </DivCardHome>
             </DivContainer>
         </Theme>
